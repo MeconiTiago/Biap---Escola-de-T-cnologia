@@ -1,0 +1,20 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo circular -->
+  <circle cx="100" cy="100" r="100" fill="#10b981" />
+  
+  <!-- Cabeça -->
+  <circle cx="100" cy="85" r="40" fill="#f8fafc" />
+  
+  <!-- Corpo -->
+  <path d="M100,130 C60,130 40,170 40,200 L160,200 C160,170 140,130 100,130 Z" fill="#f8fafc" />
+  
+  <!-- Detalhes do rosto -->
+  <circle cx="85" cy="75" r="5" fill="#1e293b" /> <!-- Olho esquerdo -->
+  <circle cx="115" cy="75" r="5" fill="#1e293b" /> <!-- Olho direito -->
+  <path d="M90,95 C95,100 105,100 110,95" stroke="#1e293b" stroke-width="2" fill="none" /> <!-- Sorriso -->
+  
+  <!-- Cabelo -->
+  <path d="M60,70 C60,50 80,40 100,40 C120,40 140,50 140,70 L140,85 C140,75 130,65 100,65 C70,65 60,75 60,85 L60,70 Z" fill="#1e293b" />
+  <path d="M60,70 C60,60 70,50 100,50 C130,50 140,60 140,70" fill="#1e293b" />
+  <path d="M70,45 C80,35 120,35 130,45" stroke="#1e293b" stroke-width="10" fill="none" />
+</svg>

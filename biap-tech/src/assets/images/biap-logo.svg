@@ -1,0 +1,13 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo do logo -->
+  <rect x="10" y="10" width="40" height="40" rx="8" fill="#e11d48" />
+  
+  <!-- Letra B -->
+  <path d="M25 20 L25 40 M25 20 C35 20, 35 30, 25 30 M25 30 C38 30, 38 40, 25 40" stroke="white" stroke-width="4" fill="none" />
+  
+  <!-- Texto BIAP -->
+  <text x="60" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#e11d48">BIAP</text>
+  
+  <!-- Tagline -->
+  <text x="60" y="50" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Escola de Tecnologia</text>
+</svg>

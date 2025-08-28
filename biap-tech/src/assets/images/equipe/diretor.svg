@@ -1,0 +1,26 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo circular -->
+  <circle cx="100" cy="100" r="100" fill="#1e40af" />
+  
+  <!-- Cabeça -->
+  <circle cx="100" cy="85" r="40" fill="#f8fafc" />
+  
+  <!-- Corpo -->
+  <path d="M100,130 C60,130 40,170 40,200 L160,200 C160,170 140,130 100,130 Z" fill="#f8fafc" />
+  
+  <!-- Detalhes do rosto -->
+  <circle cx="85" cy="75" r="5" fill="#1e293b" /> <!-- Olho esquerdo -->
+  <circle cx="115" cy="75" r="5" fill="#1e293b" /> <!-- Olho direito -->
+  <path d="M90,95 C95,100 105,100 110,95" stroke="#1e293b" stroke-width="2" fill="none" /> <!-- Sorriso -->
+  
+  <!-- Cabelo -->
+  <path d="M60,85 C60,55 80,45 100,45 C120,45 140,55 140,85" fill="#1e293b" />
+  
+  <!-- Gravata -->
+  <path d="M100,130 L90,150 L100,200 L110,150 Z" fill="#3b82f6" />
+  
+  <!-- Óculos -->
+  <rect x="75" y="70" width="20" height="10" rx="2" stroke="#475569" stroke-width="2" fill="none" />
+  <rect x="105" y="70" width="20" height="10" rx="2" stroke="#475569" stroke-width="2" fill="none" />
+  <line x1="95" y1="75" x2="105" y2="75" stroke="#475569" stroke-width="2" />
+</svg>

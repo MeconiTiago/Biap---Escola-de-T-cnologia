@@ -1,0 +1,54 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo com gradiente -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="15" fill="url(#grad1)" />
+  
+  <!-- Elementos de código -->
+  <g fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8">
+    <!-- Representação de uma janela de navegador -->
+    <rect x="100" y="70" width="200" height="160" rx="5" fill="#ffffff" opacity="0.2" />
+    <rect x="100" y="70" width="200" height="25" rx="5" fill="#ffffff" opacity="0.3" />
+    
+    <!-- Círculos de controle da janela -->
+    <circle cx="115" cy="82" r="5" fill="#ff5f57" stroke="none" />
+    <circle cx="135" cy="82" r="5" fill="#febc2e" stroke="none" />
+    <circle cx="155" cy="82" r="5" fill="#28c840" stroke="none" />
+    
+    <!-- Barra de endereço -->
+    <rect x="170" y="77" width="120" height="10" rx="5" fill="#ffffff" opacity="0.4" stroke="none" />
+    
+    <!-- Conteúdo da página -->
+    <rect x="110" y="105" width="80" height="10" rx="2" fill="#ffffff" opacity="0.6" stroke="none" />
+    <rect x="110" y="125" width="180" height="5" rx="2" fill="#ffffff" opacity="0.4" stroke="none" />
+    <rect x="110" y="135" width="160" height="5" rx="2" fill="#ffffff" opacity="0.4" stroke="none" />
+    <rect x="110" y="145" width="170" height="5" rx="2" fill="#ffffff" opacity="0.4" stroke="none" />
+    
+    <rect x="110" y="160" width="60" height="40" rx="2" fill="#ffffff" opacity="0.3" stroke="none" />
+    <rect x="180" y="160" width="60" height="40" rx="2" fill="#ffffff" opacity="0.3" stroke="none" />
+    <rect x="250" y="160" width="40" height="40" rx="2" fill="#ffffff" opacity="0.3" stroke="none" />
+  </g>
+  
+  <!-- Elementos de código flutuantes -->
+  <g fill="#ffffff" opacity="0.7" font-family="monospace" font-size="12">
+    <text x="40" y="50">&lt;html&gt;</text>
+    <text x="30" y="70">&lt;head&gt;</text>
+    <text x="30" y="90">&lt;/head&gt;</text>
+    <text x="30" y="110">&lt;body&gt;</text>
+    <text x="30" y="210">&lt;/body&gt;</text>
+    <text x="40" y="230">&lt;/html&gt;</text>
+    
+    <text x="310" y="50">{</text>
+    <text x="320" y="70">color: #fff;</text>
+    <text x="320" y="90">margin: 0;</text>
+    <text x="320" y="110">padding: 1rem;</text>
+    <text x="310" y="130">}</text>
+  </g>
+  
+  <!-- Título do curso -->
+  <text x="200" y="270" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Desenvolvimento Web</text>
+</svg>
