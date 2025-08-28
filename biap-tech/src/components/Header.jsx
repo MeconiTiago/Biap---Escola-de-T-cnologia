@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import biapLogo from '../assets/images/biap-logo.svg';
+import biapLogo from '../assets/images/biap-logo-oficial.svg';
 import { GradientButton } from '../components/ui';
 
 const Header = () => {
