@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import techCode from '../assets/images/tech-code.svg';
-import techNetwork from '../assets/images/tech-network.svg';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -150,7 +148,6 @@ const Matricula = () => {
             
             {/* Elemento decorativo */}
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary-200 dark:bg-primary-900 rounded-full opacity-50 blur-xl"></div>
-            <img src={techCode} alt="Código" className="absolute w-20 -top-10 -right-10 animate-float opacity-30" />
           </motion.div>
           
           {/* Informações adicionais */}
@@ -160,7 +157,7 @@ const Matricula = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="space-y-8"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-rose-50 via-pink-50 to-indigo-50 dark:from-purple-900/30 dark:via-fuchsia-900/30 dark:to-indigo-900/30 p-8 rounded-2xl shadow-lg mb-6">
               <div className="relative z-10">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Por que escolher a BIAP?</h2>
                 <ul className="space-y-4">
@@ -199,7 +196,6 @@ const Matricula = () => {
                   </li>
                 </ul>
               </div>
-              <img src={techNetwork} alt="Rede" className="absolute w-20 -bottom-10 -right-10 animate-float animation-delay-500 opacity-30" />
             </div>
             
             <div className="bg-primary-600 text-white rounded-2xl shadow-xl p-8">

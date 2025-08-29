@@ -51,20 +51,19 @@ function App() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative flex justify-center"
           >
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full">
               <img src={techCode} alt="Código de programação" className="absolute w-40 top-0 left-0 animate-float" />
               <img src={techDevices} alt="Dispositivos tecnológicos" className="absolute w-40 top-20 right-0 animate-float animation-delay-500" />
               <img src={techNetwork} alt="Rede de tecnologia" className="absolute w-40 bottom-0 left-1/4 animate-float animation-delay-1000" />
               <AnimatedGradientBorder className="relative z-10">
-              <div className="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700">
-                {/* Placeholder for hero image */}
-                <div className="w-full h-full flex items-center justify-center text-gray-500 dark:text-gray-400">
-                  <svg className="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                  </svg>
+                <div className="w-full bg-gray-200 dark:bg-gray-700">
+                  <img 
+                    src="https://s2-casavogue.glbimg.com/jom4j4xjjxhAxB5sI7C0e81iXMI=/0x0:1920x1080/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_d72fd4bf0af74c0c89d27a5a226dbbf8/internal_photos/bs/2024/m/v/5qysUDSXAcsQdLUfxR9w/00-as-universidades-mais-bonitas-do-mundo-em-2024-segundo-o-prix-versailles.jpg"
+                    alt="Hero image"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </div>
-            </AnimatedGradientBorder>
+              </AnimatedGradientBorder>
               {/* Decorative elements */}
               <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary-200 dark:bg-primary-900 rounded-full opacity-50 blur-xl"></div>
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary-400 dark:bg-primary-700 rounded-full opacity-40 blur-xl"></div>
@@ -76,7 +75,7 @@ function App() {
       {/* Features/Cursos Section */}
       <section id="cursos" className="section-padding bg-gray-50 dark:bg-gray-800/50">
         <div className="container-custom">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -137,7 +136,7 @@ function App() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Inteligência Artificial</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">Explore o mundo da IA e aprenda a desenvolver soluções inteligentes com machine learning e deep learning.</p>
-                <AnimatedButton variant="ghost" color="purple" className="p-0">
+                <AnimatedButton variant="ghost" color="primary" className="p-0">
                   Saiba mais →
                 </AnimatedButton>
               </AnimatedCard>
@@ -182,11 +181,11 @@ function App() {
                 <span className="text-gray-700 dark:text-gray-300">Suporte para colocação no mercado de trabalho</span>
               </li>
             </ul>
-            <PulseButton color="primary">
+            <PulseButton className="px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-rose-500 to-blue-600 hover:from-rose-600 hover:to-blue-700 transition duration-300 shadow-md">
               Conheça nossa história
             </PulseButton>
           </div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -194,13 +193,12 @@ function App() {
             className="order-1 md:order-2 relative"
           >
             <div className="relative z-10 bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
-              <div className="aspect-w-4 aspect-h-3 bg-gray-200 dark:bg-gray-700">
-                {/* Placeholder for about image */}
-                <div className="w-full h-full flex items-center justify-center text-gray-500 dark:text-gray-400">
-                  <svg className="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                  </svg>
-                </div>
+              <div className="w-full h-full">
+                <img 
+                  src="https://addee.com.br/wp-content/uploads/2020/04/original-e227a457f0113314cd02d3fcdef04f87.jpeg"
+                  alt="About BIAP"
+                  className="w-full h-[400px] object-cover"
+                />
               </div>
             </div>
             {/* Decorative elements */}
@@ -211,7 +209,7 @@ function App() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 bg-primary-600 dark:bg-primary-800">
+      <section className="py-12 bg-gradient-to-r from-rose-500 via-fuchsia-500 to-blue-600 dark:from-purple-800 dark:via-fuchsia-900 dark:to-indigo-900">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

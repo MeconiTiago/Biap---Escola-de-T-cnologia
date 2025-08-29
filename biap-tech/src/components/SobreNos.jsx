@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion';
 import Header from './Header';
 import Footer from './Footer';
-import sobreBanner from '../assets/images/banners/sobre-banner.svg';
-import diretorImg from '../assets/images/equipe/diretor.svg';
-import professorImg from '../assets/images/equipe/professor.svg';
-import coordenadorImg from '../assets/images/equipe/coordenador.svg';
 import { AnimatedCard } from './ui';
 import { GradientText, AnimatedText } from './ui';
 
@@ -13,15 +9,44 @@ const SobreNos = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <Header />
 
-      {/* Banner da página */}
-      <section className="py-10 relative overflow-hidden">
+      {/* Banner – padronizado com o estilo escuro + diagonais + brilhos */}
+      <section className="relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
-          className="w-full"
+          className="relative h-[220px] sm:h-[280px] md:h-[360px] rounded-2xl"
         >
-          <img src={sobreBanner} alt="Sobre Nós" className="w-full h-auto" />
+          {/* base abstrata */}
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop"
+            alt="Fundo abstrato tecnologia"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+
+          {/* escurecimento */}
+          <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.65),rgba(0,0,0,0.65))]" />
+
+          {/* diagonais */}
+          <div className="absolute inset-0 opacity-90 mix-blend-multiply bg-[linear-gradient(135deg,rgba(6,8,17,0.9)_0%,rgba(6,8,17,0.9)_38%,rgba(4,6,20,0.85)_38%,rgba(4,6,20,0.85)_62%,rgba(13,16,36,0.92)_62%,rgba(13,16,36,0.92)_100%)]" />
+
+          {/* brilhos sutis */}
+          <div className="absolute inset-0 mix-blend-screen pointer-events-none bg-[radial-gradient(60%_40%_at_20%_10%,rgba(59,130,246,0.45),transparent),radial-gradient(50%_50%_at_85%_25%,rgba(147,51,234,0.35),transparent),radial-gradient(60%_50%_at_60%_70%,rgba(239,68,68,0.25),transparent)]" />
+
+          {/* vinheta */}
+          <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_20%,transparent,rgba(0,0,0,0.35))]" />
+
+          {/* textos */}
+          <div className="relative z-10 flex h-full items-center justify-center text-center px-4">
+            <div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-rose-500 via-fuchsia-500 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_6px_18px_rgba(0,0,0,0.35)]">
+                Sobre Nós
+              </h1>
+              <p className="mt-3 text-base sm:text-lg text-white/90 drop-shadow">
+                Conheça nossa história, missão e valores
+              </p>
+            </div>
+          </div>
         </motion.div>
       </section>
 
@@ -173,14 +198,15 @@ const SobreNos = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Nossa Equipe</h2>
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent e mb-4">Nossa Equipe</h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Conheça os profissionais que fazem da BIAP Tech uma instituição de excelência.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Membro 1 */}
+            {/* cards de equipe (mantidos) */}
+            {/* ... (seus cards originais, sem alterações) ... */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -189,20 +215,19 @@ const SobreNos = () => {
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               <img
-                src={diretorImg}
-                alt="Carlos Mendes"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDrFFIL-2wUhXFsjaFrrNrUwQXwRlkHEwUlA&s"
+                alt="Winson Babayaga"
                 className="w-full h-64 object-contain p-4"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Carlos Mendes</h3>
-                <p className="text-primary-600 dark:text-primary-400 font-medium mb-3">CEO & Fundador</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Winson Babayaga</h3>
+                <p className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent font-medium mb-3">CEO & Fundador</p>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Com mais de 20 anos de experiência em tecnologia e educação, Carlos lidera a BIAP Tech com visão inovadora e compromisso com a excelência.
+                  Com mais de 25 anos de experiência em HTML, tecnologia e educação, Winson Babayaga é CEO e Fundador da BIAP Tech, com visão inovadora e compromisso com a excelência.
                 </p>
               </div>
             </motion.div>
 
-            {/* Membro 2 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -211,20 +236,19 @@ const SobreNos = () => {
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               <img
-                src={coordenadorImg}
-                alt="Ana Silva"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlSZgbZ3Vvm4uA0--o-KfPihd4LZgK0oCMhw&s"
+                alt="Sara Mendes"
                 className="w-full h-64 object-contain p-4"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Ana Silva</h3>
-                <p className="text-primary-600 dark:text-primary-400 font-medium mb-3">Diretora Acadêmica</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Sara Mendes</h3>
+                <p className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent font-medium mb-3">Diretora Acadêmica</p>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Doutora em Ciência da Computação, Ana é responsável por desenvolver e aprimorar constantemente nossa metodologia de ensino.
+                  Doutora em Ciência da Computação, Sara é responsável por desenvolver e aprimorar constantemente nossa metodologia de ensino.
                 </p>
               </div>
             </motion.div>
 
-            {/* Membro 3 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -233,20 +257,19 @@ const SobreNos = () => {
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               <img
-                src={professorImg}
-                alt="Roberto Alves"
+                src="https://walterlongo.com.br/wp-content/uploads/2019/09/30470414150_27d531459a_o-copy-2.png"
+                alt="Mario Alberto Maçom"
                 className="w-full h-64 object-contain p-4"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Roberto Alves</h3>
-                <p className="text-primary-600 dark:text-primary-400 font-medium mb-3">Diretor de Tecnologia</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Mario Alberto Maçom</h3>
+                <p className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent font-medium mb-3">Diretor de Tecnologia</p>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Com passagens por grandes empresas de tecnologia, Roberto garante que nossos cursos estejam sempre alinhados às demandas do mercado.
+                  Com passagens por grandes empresas de tecnologia, Mario garante que nossos cursos estejam sempre alinhados às demandas do mercado.
                 </p>
               </div>
             </motion.div>
 
-            {/* Membro 4 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -255,15 +278,15 @@ const SobreNos = () => {
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               <img
-                src={coordenadorImg}
-                alt="Juliana Costa"
+                src="https://static.vecteezy.com/system/resources/previews/055/069/578/non_2x/businesswoman-working-on-laptop-stylish-blonde-woman-in-black-suit-using-notebook-computer-free-png.png"
+                alt="Leticia Pinto"
                 className="w-full h-64 object-contain p-4"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Juliana Costa</h3>
-                <p className="text-primary-600 dark:text-primary-400 font-medium mb-3">Coordenadora de Parcerias</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Leticia Pinto</h3>
+                <p className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent font-medium mb-3">Coordenadora de Parcerias</p>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Juliana desenvolve parcerias estratégicas com empresas de tecnologia, garantindo oportunidades de estágio e emprego para nossos alunos.
+                  Leticia desenvolve parcerias estratégicas com empresas de tecnologia, garantindo oportunidades de estágio e emprego para nossos alunos.
                 </p>
               </div>
             </motion.div>
@@ -281,14 +304,16 @@ const SobreNos = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Nossos Parceiros</h2>
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent e mb-4">
+              Nossos Parceiros
+            </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Empresas que confiam na qualidade da nossa formação e contratam nossos talentos.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {/* Logos de parceiros */}
+            {/* Logos – mantidos como estavam */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -296,9 +321,13 @@ const SobreNos = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
             >
-              <div className="h-12 w-24 bg-gray-200 dark:bg-gray-700 rounded-md flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400 font-medium">Logo 1</span>
-              </div>
+              <a href="https://www.amazon.com.br/" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://www.prideindustries.com/wp-content/uploads/2021/06/Customer-logo_Amazon.png"
+                  alt="Empresa 1"
+                  className="h-14 object-contain"
+                />
+              </a>
             </motion.div>
 
             <motion.div
@@ -308,9 +337,17 @@ const SobreNos = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
             >
-              <div className="h-12 w-24 bg-gray-200 dark:bg-gray-700 rounded-md flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400 font-medium">Logo 2</span>
-              </div>
+              <a
+                href="https://about.google/intl/pt-BR/?_gl=1*1qft4lp*_ga*MzMwNjA3MjUzLjE3NTY0Njg5OTc.*_ga_V9K47ZG8NP*czE3NTY0Njg5OTckbzEkZzEkdDE3NTY0NjkwMTEkajQ2JGwwJGgw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcHop6zSB1Gk0z8FdoXAYJW1f03ZcdiH0_tQ&s"
+                  alt="Empresa 2"
+                  className="h-14 object-contain"
+                />
+              </a>
             </motion.div>
 
             <motion.div
@@ -320,9 +357,17 @@ const SobreNos = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
             >
-              <div className="h-12 w-24 bg-gray-200 dark:bg-gray-700 rounded-md flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400 font-medium">Logo 3</span>
-              </div>
+              <a
+                href="https://www.lojaboschferramentas.com.br/?gad_source=1&gad_campaignid=20361910526&gbraid=0AAAAAo2o5xettvkPGu-kg2i91alGw6nUY&gclid=Cj0KCQjwn8XFBhCxARIsAMyH8Bsx5AtvNQJ1Zo9WtX3zi081fky1kskswyeMpmmytoMeLeW4_WoMj9saAjnUEALw_wcB"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://assets.bosch.com/media/global/bosch_group/our_figures/brands/bosch-brand-bosch_res_1280x720.webp"
+                  alt="Empresa 3"
+                  className="h-14 object-contain"
+                />
+              </a>
             </motion.div>
 
             <motion.div
@@ -332,9 +377,13 @@ const SobreNos = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
             >
-              <div className="h-12 w-24 bg-gray-200 dark:bg-gray-700 rounded-md flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400 font-medium">Logo 4</span>
-              </div>
+              <a href="https://www.nvidia.com/pt-br/" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9FrXqIABVaSmNOQb3X7a5_3qStp_o6nm_oA&s"
+                  alt="Empresa 4"
+                  className="h-14 object-contain"
+                />
+              </a>
             </motion.div>
 
             <motion.div
@@ -344,9 +393,13 @@ const SobreNos = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
             >
-              <div className="h-12 w-24 bg-gray-200 dark:bg-gray-700 rounded-md flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400 font-medium">Logo 5</span>
-              </div>
+              <a href="https://www.makita.com.br/" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://1000logos.net/wp-content/uploads/2017/12/Makita-logo.png"
+                  alt="Empresa 5"
+                  className="h-14 object-contain"
+                />
+              </a>
             </motion.div>
 
             <motion.div
@@ -356,9 +409,17 @@ const SobreNos = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
             >
-              <div className="h-12 w-24 bg-gray-200 dark:bg-gray-700 rounded-md flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400 font-medium">Logo 6</span>
-              </div>
+              <a
+                href="https://www.mirao.com.br/?srsltid=AfmBOor1-kSQiDJwFxEr87-WtMSgkIYej0dkW1uIP1ZkaZJAbS5dv92M"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://media.licdn.com/dms/image/v2/C4D0BAQGQnQy9yc4zLQ/company-logo_200_200/company-logo_200_200/0/1630535243319?e=2147483647&v=beta&t=OVecd1e9go_YDc2EVuycX1OYIm5yO18yIHaxXgM2XAw"
+                  alt="Empresa 6"
+                  className="h-14 object-contain"
+                />
+              </a>
             </motion.div>
           </div>
         </div>

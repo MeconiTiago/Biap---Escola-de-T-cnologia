@@ -1,28 +1,53 @@
 import { motion } from 'framer-motion';
 import Header from './Header';
 import Footer from './Footer';
-import depoimentosBanner from '../assets/images/banners/depoimentos-banner.svg';
-import perfil1 from '../assets/images/depoimentos/perfil1.svg';
-import perfil2 from '../assets/images/depoimentos/perfil2.svg';
-import perfil3 from '../assets/images/depoimentos/perfil3.svg';
 
 const Depoimentos = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <Header />
-      
-      {/* Banner da página */}
-      <section className="py-10 relative overflow-hidden">
+
+      {/* Banner – padronizado (hero escuro + diagonais + brilhos) */}
+      <section className="relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
-          className="w-full"
+          className="relative h-[220px] sm:h-[280px] md:h-[360px] rounded-2xl"
         >
-          <img src={depoimentosBanner} alt="Depoimentos" className="w-full h-auto" />
+          {/* base abstrata */}
+          <img
+            src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1600&auto=format&fit=crop"
+            alt="Fundo abstrato depoimentos"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+
+          {/* escurecimento */}
+          <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.65),rgba(0,0,0,0.65))]" />
+
+          {/* diagonais */}
+          <div className="absolute inset-0 opacity-90 mix-blend-multiply bg-[linear-gradient(135deg,rgba(6,8,17,0.9)_0%,rgba(6,8,17,0.9)_38%,rgba(4,6,20,0.85)_38%,rgba(4,6,20,0.85)_62%,rgba(13,16,36,0.92)_62%,rgba(13,16,36,0.92)_100%)]" />
+
+          {/* brilhos sutis */}
+          <div className="absolute inset-0 mix-blend-screen pointer-events-none bg-[radial-gradient(60%_40%_at_20%_10%,rgba(59,130,246,0.45),transparent),radial-gradient(50%_50%_at_85%_25%,rgba(147,51,234,0.35),transparent),radial-gradient(60%_50%_at_60%_70%,rgba(239,68,68,0.25),transparent)]" />
+
+          {/* vinheta */}
+          <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_20%,transparent,rgba(0,0,0,0.35))]" />
+
+          {/* textos */}
+          <div className="relative z-10 flex h-full items-center justify-center text-center px-4">
+            <div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-rose-500 via-fuchsia-500 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_6px_18px_rgba(0,0,0,0.35)]">
+                Depoimentos
+              </h1>
+              <p className="mt-3 text-base sm:text-lg text-white/90 drop-shadow">
+                O que nossos alunos dizem sobre nós
+              </p>
+            </div>
+          </div>
         </motion.div>
       </section>
-      
+
       {/* Depoimentos em Destaque */}
       <section className="py-20">
         <div className="container-custom">
@@ -33,12 +58,14 @@ const Depoimentos = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Histórias de Sucesso</h2>
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent e mb-4">
+              Histórias de Sucesso
+            </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Veja como nossos cursos impactaram positivamente a vida profissional de nossos alunos.
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 gap-12">
             {/* Depoimento 1 */}
             <motion.div
@@ -55,11 +82,11 @@ const Depoimentos = () => {
                   </svg>
                 </div>
               </div>
-              
+
               <div className="flex items-center mb-6">
-                <img 
-                  src={perfil1} 
-                  alt="Pedro Oliveira" 
+                <img
+                  src="https://idocode.com.br/wp-content/uploads/2021/04/jovens-e-a-tecnologia-1.jpg"
+                  alt="Pedro Oliveira"
                   className="w-16 h-16 rounded-full object-contain mr-4"
                 />
                 <div>
@@ -67,11 +94,13 @@ const Depoimentos = () => {
                   <p className="text-primary-600 dark:text-primary-400">Desenvolvedor Web</p>
                 </div>
               </div>
-              
+
               <p className="text-gray-600 dark:text-gray-300 mb-6 italic">
-                "Antes da BIAP Tech, eu trabalhava como assistente administrativo e não via perspectivas de crescimento. Após concluir o curso de Desenvolvimento Web, consegui meu primeiro emprego como desenvolvedor front-end em apenas 2 meses. Hoje, 3 anos depois, sou desenvolvedor sênior em uma startup de tecnologia e meu salário triplicou."
+                "Antes da BIAP Tech, eu trabalhava como assistente administrativo e não via perspectivas de crescimento.
+                Após concluir o curso de Desenvolvimento Web, consegui meu primeiro emprego como desenvolvedor front-end em apenas 2 meses.
+                Hoje, 3 anos depois, sou desenvolvedor sênior em uma startup de tecnologia e meu salário triplicou."
               </p>
-              
+
               <div className="flex items-center">
                 <div className="flex mr-4">
                   {[...Array(5)].map((_, i) => (
@@ -80,10 +109,10 @@ const Depoimentos = () => {
                     </svg>
                   ))}
                 </div>
-                <span className="text-gray-500 dark:text-gray-400">Curso: Desenvolvimento Web</span>
+                <span className="text-gray-500 dark:text-gray-400"><b>Curso: </b>Desenvolvimento Web</span>
               </div>
             </motion.div>
-            
+
             {/* Depoimento 2 */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -99,11 +128,11 @@ const Depoimentos = () => {
                   </svg>
                 </div>
               </div>
-              
+
               <div className="flex items-center mb-6">
-                <img 
-                  src={perfil2} 
-                  alt="Mariana Santos" 
+                <img
+                  src="https://media.istockphoto.com/id/1911998428/pt/foto/beautiful-business-woman-working-with-laptop-while-looking-at-camera-in-living-room-at-home.jpg?s=612x612&w=0&k=20&c=I2vt2hfTtXtnQOA_dkF2jX-xvLQAu1qeQ9pqsrNAtUw="
+                  alt="Mariana Santos"
                   className="w-16 h-16 rounded-full object-contain mr-4"
                 />
                 <div>
@@ -111,11 +140,13 @@ const Depoimentos = () => {
                   <p className="text-primary-600 dark:text-primary-400">Desenvolvedora Mobile</p>
                 </div>
               </div>
-              
+
               <p className="text-gray-600 dark:text-gray-300 mb-6 italic">
-                "Eu já trabalhava como desenvolvedora web, mas queria migrar para o desenvolvimento mobile. O curso da BIAP Tech me deu exatamente o que eu precisava: conhecimento prático e projetos reais para construir meu portfólio. A metodologia hands-on fez toda a diferença, e hoje trabalho remotamente para uma empresa dos EUA desenvolvendo aplicativos."
+                "Eu já trabalhava como desenvolvedora web, mas queria migrar para o desenvolvimento mobile.
+                O curso da BIAP Tech me deu exatamente o que eu precisava: conhecimento prático e projetos reais para construir meu portfólio.
+                A metodologia hands-on fez toda a diferença, e hoje trabalho remotamente para uma empresa dos EUA desenvolvendo aplicativos."
               </p>
-              
+
               <div className="flex items-center">
                 <div className="flex mr-4">
                   {[...Array(5)].map((_, i) => (
@@ -124,13 +155,13 @@ const Depoimentos = () => {
                     </svg>
                   ))}
                 </div>
-                <span className="text-gray-500 dark:text-gray-400">Curso: Desenvolvimento Mobile</span>
+                <span className="text-gray-500 dark:text-gray-400"><b>Curso: </b>Desenvolvimento Mobile</span>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-      
+
       {/* Mais Depoimentos */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800/50">
         <div className="container-custom">
@@ -144,9 +175,9 @@ const Depoimentos = () => {
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg"
             >
               <div className="flex items-center mb-4">
-                <img 
-                  src={perfil3} 
-                  alt="Rafael Gomes" 
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHn5JNdYzDbbFBEeHDK9z3xezXWS4mElt3PQ&s"
+                  alt="Rafael Gomes"
                   className="w-12 h-12 rounded-full object-contain mr-3"
                 />
                 <div>
@@ -154,11 +185,11 @@ const Depoimentos = () => {
                   <p className="text-primary-600 dark:text-primary-400 text-sm">Engenheiro de IA</p>
                 </div>
               </div>
-              
+
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 italic">
                 "O curso de IA da BIAP Tech é simplesmente excepcional. Os professores são profissionais que atuam no mercado e trazem problemas reais para a sala de aula. Consegui implementar um projeto de IA na empresa onde trabalho que resultou em uma economia significativa de recursos."
               </p>
-              
+
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -167,7 +198,7 @@ const Depoimentos = () => {
                 ))}
               </div>
             </motion.div>
-            
+
             {/* Depoimento 4 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -177,9 +208,9 @@ const Depoimentos = () => {
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg"
             >
               <div className="flex items-center mb-4">
-                <img 
-                  src={perfil2} 
-                  alt="Camila Ferreira" 
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyMojRh-PZ2IMcGoDh-Fe4n8eDJ22LarOZEg&s"
+                  alt="Camila Ferreira"
                   className="w-12 h-12 rounded-full object-contain mr-3"
                 />
                 <div>
@@ -187,11 +218,11 @@ const Depoimentos = () => {
                   <p className="text-primary-600 dark:text-primary-400 text-sm">UX/UI Designer</p>
                 </div>
               </div>
-              
+
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 italic">
                 "Fiz o módulo de UX/UI do curso de Desenvolvimento Web e foi transformador. A abordagem prática me permitiu construir um portfólio sólido durante o curso, o que foi fundamental para conseguir meu primeiro trabalho na área."
               </p>
-              
+
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -200,7 +231,7 @@ const Depoimentos = () => {
                 ))}
               </div>
             </motion.div>
-            
+
             {/* Depoimento 5 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -210,9 +241,9 @@ const Depoimentos = () => {
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg"
             >
               <div className="flex items-center mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
-                  alt="Lucas Martins" 
+                <img
+                  src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                  alt="Lucas Martins"
                   className="w-12 h-12 rounded-full object-cover mr-3"
                 />
                 <div>
@@ -220,11 +251,11 @@ const Depoimentos = () => {
                   <p className="text-primary-600 dark:text-primary-400 text-sm">DevOps Engineer</p>
                 </div>
               </div>
-              
+
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 italic">
                 "A especialização em DevOps da BIAP Tech me deu as ferramentas necessárias para implementar práticas modernas de CI/CD na minha empresa. O conhecimento prático e as certificações que obtive foram fundamentais para minha promoção."
               </p>
-              
+
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -236,7 +267,7 @@ const Depoimentos = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Vídeo Depoimentos */}
       <section className="py-20">
         <div className="container-custom">
@@ -247,12 +278,14 @@ const Depoimentos = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Depoimentos em Vídeo</h2>
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent e mb-4">
+              Depoimentos em Vídeo
+            </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Assista aos relatos de nossos ex-alunos sobre suas experiências na BIAP Tech.
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {/* Vídeo 1 */}
             <motion.div
@@ -271,7 +304,7 @@ const Depoimentos = () => {
               </div>
               <span className="text-gray-500 dark:text-gray-400">Vídeo Depoimento 1</span>
             </motion.div>
-            
+
             {/* Vídeo 2 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -292,9 +325,9 @@ const Depoimentos = () => {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
-      <section className="py-16 bg-primary-600 dark:bg-primary-800">
+      <section className="py-12 bg-gradient-to-r from-rose-500 via-fuchsia-500 to-blue-600 dark:from-purple-800 dark:via-fuchsia-900 dark:to-indigo-900">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -306,13 +339,16 @@ const Depoimentos = () => {
             <p className="text-lg text-primary-100 mb-8 max-w-3xl mx-auto">
               Junte-se aos milhares de alunos que já transformaram suas vidas com a BIAP Tech.
             </p>
-            <a href="/matricula" className="bg-white text-primary-600 hover:bg-primary-50 font-medium py-3 px-6 rounded-md transition-all duration-300 shadow-md hover:shadow-lg">
+            <a
+              href="/matricula"
+              className="bg-white text-primary-600 hover:bg-primary-50 font-medium py-3 px-6 rounded-md transition-all duration-300 shadow-md hover:shadow-lg"
+            >
               Matricule-se Agora
             </a>
           </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
